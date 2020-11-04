@@ -2,7 +2,6 @@
 from datetime import datetime
 from uuid import uuid4
 
-from django.contrib.auth.models import User
 from django.test import LiveServerTestCase
 from pytest import raises
 from selenium import webdriver
@@ -11,6 +10,7 @@ from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
 
 from catalog.models import Favorite, Product
+from accounts.models import CustomUser
 from scrapping import NUTELLA
 
 
@@ -22,7 +22,7 @@ class SeleniumBasedTestCase(LiveServerTestCase):
         caps = DesiredCapabilities().FIREFOX.copy()
         caps["marionette"] = True
 
-        self.user = User.objects.create_user(username="test1", password="test1@1234")
+        self.user = CustomUser.objects.create_user(username="test1", password="test1@1234")
 
         self.driver = webdriver.Firefox(
             capabilities=caps,

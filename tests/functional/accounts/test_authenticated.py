@@ -2,11 +2,11 @@
 from datetime import datetime
 from uuid import uuid4
 
-from django.contrib.auth.models import User
 from django.test import RequestFactory, TestCase
 from django.urls import reverse
 
 from catalog.models import Favorite, Product
+from accounts.models import CustomUser
 
 
 class TestUnauthenticated(TestCase):
@@ -77,7 +77,7 @@ class TestAuthenticated(TestCase):
     def setUp(self) -> None:
         """Tests configuration"""
         self.factory = RequestFactory()
-        self.test_user = User.objects.create_user(
+        self.test_user = CustomUser.objects.create_user(
             "test_user", "test_user@test.com", "test_password"
         )
         self.client.login(username="test_user", password="test_password")
@@ -85,7 +85,7 @@ class TestAuthenticated(TestCase):
         favorite = Favorite(
             substitued=self.product_1,
             substitute=self.product_2,
-            user=User.objects.get(username="test_user"),
+            user=CustomUser.objects.get(username="test_user"),
             date=datetime.now(),
         )
 
@@ -102,7 +102,7 @@ class TestAuthenticated(TestCase):
 
     def test_favorites_while_authenticated(self):
         """If user is authenticated, you should access favorites."""
-        user_id = User.objects.get(username="test_user").id
+        user_id = CustomUser.objects.get(username="test_user").id
         url = reverse("catalog:favorites", kwargs={"user": user_id})
         response = self.client.get(url)
         self.assertTemplateUsed(response, "favorites.html")

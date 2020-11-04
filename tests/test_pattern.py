@@ -1,10 +1,10 @@
 """Test pattern for other test"""
 from uuid import uuid4
 
-from django.contrib.auth.models import User
 from django.test import TestCase
 
 from catalog.models import Product
+from accounts.models import CustomUser
 from scrapping import NUTELLA
 
 
@@ -13,7 +13,7 @@ class TestPattern(TestCase):
 
     def setUp(self) -> None:
         """Environment for tests"""
-        self.user = User.objects.create_user(username="test1", password="test1@1234")
+        self.user = CustomUser.objects.create_user(username="test1", password="test1@1234")
 
         self.client.login(username="test1", password="test1@1234")
 

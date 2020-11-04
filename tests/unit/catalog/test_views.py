@@ -1,8 +1,8 @@
 """Test on catalog module's views"""
-from django.contrib.auth.models import User
 from django.urls import reverse
 
 from catalog.models import Product
+from accounts.models import CustomUser
 from scrapping import NUTELLA
 from tests.test_pattern import TestPattern
 
@@ -12,7 +12,7 @@ class TestViews(TestPattern):
 
     def setUp(self) -> None:
         """Tests configuration."""
-        self.test_user = User.objects.create_user(
+        self.test_user = CustomUser.objects.create_user(
             "test_user", "test_user@test.com", "test_password"
         )
         self.client.login(username="test_user", password="test_password")
