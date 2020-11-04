@@ -1,0 +1,354 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog &#8212; Documentation OCR-Projet8 1.0</title>
+    <link rel="stylesheet" href="_static/p_sphinx_theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/local_fonts.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <script src="_static/jquery.cookie.js"></script>
+    <script src="_static/p_sphinx_theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="ocrProjet8" href="ocrProjet8.html" />
+    <link rel="prev" title="Accounts" href="accounts.html" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+      <div class="relbar-top">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="ocrProjet8.html" title="ocrProjet8"
+             accesskey="N">suivant</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="accounts.html" title="Accounts"
+             accesskey="P">précédent</a> &nbsp; &nbsp;</li>
+      <li><a href="index.html">Documentation OCR-Projet8 1.0</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Catalog</a></li>
+      </ul>
+    </div>
+      </div>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+
+  <div class="section" id="module-catalog.urls">
+<span id="catalog"></span><h1>Catalog<a class="headerlink" href="#module-catalog.urls" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Urls for catalog</p>
+<span class="target" id="module-catalog.views"></span><p>Views for catalog</p>
+<dl class="py function">
+<dt id="catalog.views.delete_favorite">
+<code class="sig-prename descclassname">catalog.views.</code><code class="sig-name descname">delete_favorite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">product_id</span><span class="p">:</span> <span class="n">uuid.UUID</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.views.delete_favorite" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Delete a favorite</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="catalog.views.save">
+<code class="sig-prename descclassname">catalog.views.</code><code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">base_product</span><span class="p">:</span> <span class="n">uuid.UUID</span></em>, <em class="sig-param"><span class="n">substitute_product</span><span class="p">:</span> <span class="n">uuid.UUID</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.views.save" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Save a product in favorite</p>
+</dd></dl>
+
+<span class="target" id="module-catalog.models"></span><p>Models for catalog</p>
+<dl class="py class">
+<dt id="catalog.models.Category">
+<em class="property">class </em><code class="sig-prename descclassname">catalog.models.</code><code class="sig-name descname">Category</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.models.Category" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Class Category</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>id_category (UUID): Id of the category.
+name (str): Name of the category.
+url (URLField): URL of the category.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="catalog.models.Category.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#catalog.models.Category.DoesNotExist" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="catalog.models.Category.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#catalog.models.Category.MultipleObjectsReturned" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="catalog.models.CompareNutriscore">
+<em class="property">class </em><code class="sig-prename descclassname">catalog.models.</code><code class="sig-name descname">CompareNutriscore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lhs</span></em>, <em class="sig-param"><span class="n">rhs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.models.CompareNutriscore" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Lookip for nutriscore</p>
+<dl class="py method">
+<dt id="catalog.models.CompareNutriscore.as_sql">
+<code class="sig-name descname">as_sql</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">compiler</span></em>, <em class="sig-param"><span class="n">connection</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.models.CompareNutriscore.as_sql" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Compare nutriscores</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="catalog.models.Favorite">
+<em class="property">class </em><code class="sig-prename descclassname">catalog.models.</code><code class="sig-name descname">Favorite</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.models.Favorite" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Class Favorite.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>substitute Product: product found.
+substitued Product: product to find substitute for.
+date (DateTime): Date of the substitution.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="catalog.models.Favorite.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#catalog.models.Favorite.DoesNotExist" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="catalog.models.Favorite.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#catalog.models.Favorite.MultipleObjectsReturned" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="catalog.models.Product">
+<em class="property">class </em><code class="sig-prename descclassname">catalog.models.</code><code class="sig-name descname">Product</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.models.Product" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Class product.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>id (UUID): Id of the product.
+brands (str): Brands where the product can be found.
+category_tags (str): Categories product belongs to.
+nutrition_grade_fr (str): A to E classification for healthfulness.
+product_name_fr (str): Name of the product in french.
+url_img (str): URL of the related image on OFF.
+url (str): URL on OFF</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt id="catalog.models.Product.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#catalog.models.Product.DoesNotExist" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt id="catalog.models.Product.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#catalog.models.Product.MultipleObjectsReturned" title="Lien permanent vers cette définition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-catalog.commands.commands"></span><p>Commands for catalog</p>
+<dl class="py function">
+<dt id="catalog.commands.commands.get_better_products">
+<code class="sig-prename descclassname">catalog.commands.commands.</code><code class="sig-name descname">get_better_products</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base_product</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product">catalog.models.Product</a></span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>List<span class="p">[</span><a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product">catalog.models.Product</a><span class="p">]</span><span class="p">, </span><a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product">catalog.models.Product</a><span class="p">]</span><a class="headerlink" href="#catalog.commands.commands.get_better_products" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Get a list of products with better nutriscore from a base product.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>base_product</strong> (<a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product"><em>Product</em></a>) – product to compare</p>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>List[Product] list of better products</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="catalog.commands.commands.get_delete_info">
+<code class="sig-prename descclassname">catalog.commands.commands.</code><code class="sig-name descname">get_delete_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">product_id</span><span class="p">:</span> <span class="n">uuid.UUID</span></em>, <em class="sig-param"><span class="n">user</span><span class="p">:</span> <span class="n">django.contrib.auth.models.User</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span><a class="reference internal" href="#catalog.models.Favorite" title="catalog.models.Favorite">catalog.models.Favorite</a><span class="p">, </span>str<span class="p">]</span><a class="headerlink" href="#catalog.commands.commands.get_delete_info" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Get information to delete product in favorite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>product_id</strong> (<em>UUID</em>) – product to delete</p></li>
+<li><p><strong>user</strong> (<em>User</em>) – user owning the Favorite</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>Tuple[Favorite, product_name]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="catalog.commands.commands.get_favorite_info">
+<code class="sig-prename descclassname">catalog.commands.commands.</code><code class="sig-name descname">get_favorite_info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">base_product</span><span class="p">:</span> <span class="n">uuid.UUID</span></em>, <em class="sig-param"><span class="n">substitute_product</span><span class="p">:</span> <span class="n">uuid.UUID</span></em>, <em class="sig-param"><span class="n">user</span><span class="p">:</span> <span class="n">django.contrib.auth.models.User</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span><a class="reference internal" href="#catalog.models.Favorite" title="catalog.models.Favorite">catalog.models.Favorite</a><span class="p">, </span><a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product">catalog.models.Product</a><span class="p">]</span><a class="headerlink" href="#catalog.commands.commands.get_favorite_info" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Get information on favorite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_product</strong> (<em>UUID</em>) – product which needed to be replaced</p></li>
+<li><p><strong>substitute_product</strong> (<em>UUID</em>) – replacement product</p></li>
+<li><p><strong>user</strong> (<em>User</em>) – user who make the compare</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>Tuple[Favorite, Product]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-catalog.management.commands.empty_database"></span><p>Command to empty the default database</p>
+<dl class="py class">
+<dt id="catalog.management.commands.empty_database.Command">
+<em class="property">class </em><code class="sig-prename descclassname">catalog.management.commands.empty_database.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.management.commands.empty_database.Command" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Command empty_database</p>
+<dl class="py method">
+<dt id="catalog.management.commands.empty_database.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.management.commands.empty_database.Command.add_arguments" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Add an argument</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="catalog.management.commands.empty_database.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.management.commands.empty_database.Command.handle" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Action to do when using command</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-catalog.management.commands.populate_database"></span><p>Command to populate the default database</p>
+<dl class="py class">
+<dt id="catalog.management.commands.populate_database.Command">
+<em class="property">class </em><code class="sig-prename descclassname">catalog.management.commands.populate_database.</code><code class="sig-name descname">Command</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stdout</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">stderr</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_color</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">force_color</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.management.commands.populate_database.Command" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Command populate_database</p>
+<dl class="py method">
+<dt id="catalog.management.commands.populate_database.Command.add_arguments">
+<code class="sig-name descname">add_arguments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">parser</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.management.commands.populate_database.Command.add_arguments" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Add argument populate</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="catalog.management.commands.populate_database.Command.handle">
+<code class="sig-name descname">handle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">options</span></em><span class="sig-paren">)</span><a class="headerlink" href="#catalog.management.commands.populate_database.Command.handle" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Action when using command</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-catalog.populate"></span><p>Insert products in catalog</p>
+<dl class="py function">
+<dt id="catalog.populate.populate_categories">
+<code class="sig-prename descclassname">catalog.populate.</code><code class="sig-name descname">populate_categories</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">categories</span><span class="p">:</span> <span class="n">List</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#catalog.populate.populate_categories" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Insert a list of categories in catalog.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>categories</strong> (<em>list</em>) – List of categories to insert in db.</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="catalog.populate.populate_product">
+<code class="sig-prename descclassname">catalog.populate.</code><code class="sig-name descname">populate_product</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">products</span><span class="p">:</span> <span class="n">List</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#catalog.populate.populate_product" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Insert a list of products in catalog.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>products</strong> (<em>list</em>) – List of products to insert in db.</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="catalog.populate.save_favorite">
+<code class="sig-prename descclassname">catalog.populate.</code><code class="sig-name descname">save_favorite</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">product_to_save</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product">catalog.models.Product</a></span></em>, <em class="sig-param"><span class="n">product_to_replace</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product">catalog.models.Product</a></span></em>, <em class="sig-param"><span class="n">user</span><span class="p">:</span> <span class="n">django.contrib.auth.models.User</span></em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#catalog.populate.save_favorite" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Save a product as a favorite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>product_to_save</strong> (<a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product"><em>Product</em></a>) – product to save as a favorite.</p></li>
+<li><p><strong>product_to_replace</strong> (<a class="reference internal" href="#catalog.models.Product" title="catalog.models.Product"><em>Product</em></a>) – product to replace.</p></li>
+<li><p><strong>user</strong> (<em>User</em>) – user who made the comparaison</p></li>
+</ul>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+
+
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/catalog.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+      <div class="relbar-bottom">
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Index des modules Python"
+             >modules</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="ocrProjet8.html" title="ocrProjet8"
+             >suivant</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="accounts.html" title="Accounts"
+             >précédent</a> &nbsp; &nbsp;</li>
+      <li><a href="index.html">Documentation OCR-Projet8 1.0</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Catalog</a></li>
+      </ul>
+    </div>
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, BICHARI Mehdi.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.2.1.
+    </div>
+      <!-- PSphinxTheme -->
+  </body>
+</html>

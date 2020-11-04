@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="w-100">
+    <head>
+        {% load static %}
+        {% load navbar_search %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{% block title %}{% endblock title %}</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static "ocrProjet8/assets/img/favicon.ico" %}"/>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google font-->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Scope+One" rel="stylesheet" type="text/css">
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static "ocrProjet8/css/styles.css" %}" rel="stylesheet" />
+    </head>
+    <body id="page-top" class="w-100">
+    <div class="container-fluid w-100">
+        {% include "message.html" %}
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container-fluid">
+                <span id="pur-beurre-icon"></span>
+                <a id="pur-beurre" class="navbar-brand js-scroll-trigger" href="{% url 'home' %}">
+                    <img src="{% static "ocrProjet8/assets/img/logo_pur_beurre.png" %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                    Pur Beurre
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger">
+                            {% if not request.path == '/' %}
+                                <form id="navbar-search-form" class="navbar-search-form" action="" method="post">
+                                    {% csrf_token %}
+                                    {{ toolbar_form }}
+                                    {{ toolbar_form.media }}
+                                    <button id="search-button">OK</button>
+                                </form>
+                            {% endif %}
+                        </a></li>
+                        {% if not request.user.is_anonymous and request.user_agent.is_pc %}
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger">
+                            <label id="welcome_navbar" for="navbar_account">Bonjour, {{ request.user.first_name }}!</label>
+                        </a></li>
+                        {% endif %}
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger">
+                            <a id="navbar_account" class="navbar-icon" href="{% if request.user.is_anonymous %}{% url 'accounts:login' %}{% else %}{% url 'accounts:user_account'%}{% endif %}"><i class="fas fa-user"></i>{% if not request.user_agent.is_pc %}{% if request.user.is_anonymous %} Login{% else %} Votre Compte{% endif %}{% endif %}</a>
+                        </a></li>
+                        {% if not request.user.is_anonymous %}
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger">
+                            <a id="navbar_favorites" class="navbar-icon" href="{% url 'catalog:favorites' request.user.id %}"><img src="{% static "ocrProjet8/assets/img/carrotLogo.png" %}" id="carrot-logo" class="d-inline-block align-top" alt="">{% if not request.user_agent.is_pc %} Vos Favoris{% endif %}</a>
+                        </a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger">
+                            <a id="navbar_logout" class="navbar-icon" href="{% url 'accounts:logout' %}"><i class="fas fa-sign-out-alt"></i>{% if not request.user_agent.is_pc %} Déconnexion{% endif %}</a>
+                        </a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container h-100">
+                {% block beforeheader %}
+                {% endblock beforeheader %}
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    {% block header %}
+                    {% endblock header %}
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        {% block main %}
+        {% endblock main %}
+
+        {% block pagination %}
+        {% endblock pagination %}
+        <!-- Footer-->
+        <footer class="footer-caramel py-5">
+            <div class="container">
+                <div class="row text-center text-muted">
+                    <div class="col-md-6 justify-content-center">
+                        <a href="{% url 'notice' %}" class="text-white text-muted">Mentions Légales</a>
+                    </div>
+                    <div class="col-md-6 justify-content-center">
+                        <a href="{% url 'contact' %}" class="text-white text-muted">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static "ocrProjet8/js/scripts.js" %}"></script>
+    {% if messages %}
+      <script>
+          {% for message in messages %}
+              $(document).ready(function () {
+                  $('.toast').toast('show');
+              });
+          {% endfor %}
+      </script>
+    {% endif %}
+    </body>
+</html>

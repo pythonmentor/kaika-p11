@@ -1,0 +1,13 @@
+django==3.1.2
+django-autocomplete-light
+#django-heroku==0.3.1
+django-user-agents
+gunicorn==20.0.4
+pre-commit
+PSphinxTheme
+pyyaml
+requests
+selenium
+sphinxcontrib_django
+ua-parser
+user-agent

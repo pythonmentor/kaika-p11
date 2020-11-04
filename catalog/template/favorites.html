@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load dict_template %}
+
+{% block title %}Favoris{% endblock title %}
+
+{% block header %}
+    <div class="col-lg-10 align-self-end">
+        <h1 class="text-uppercase text-white font-weight-bold">Produit enregistrés</h1>
+        <hr class="divider my-4" />
+    </div>
+{% endblock header %}
+
+{% block main %}
+    <main class="h-100 w-100">
+        <div class="container h-75 w-100">
+            {% block replace %}{% endblock replace %}
+            <div class="row h-50 w-100">
+                {% for product in page_obj %}
+                    {% if forloop.counter|divisibleby:3 %}
+                    <div class="col-md-4 text-center align-items-center justify-content-center d-flex">
+                        <figure class="products">
+                            <a class="product" href={% url "catalog:aliment" product.id %}>
+                                <img src="{{ product.image_url }}" class="product img-fluid">
+                                <figcaption>{{ product.product_name_fr }}</figcaption>
+                            </a>
+                            {% with product as substitute %}
+                                {% block save %}
+                                    <form class="delete-form" action="{% url "catalog:delete_favorite" product.id %}" method="post">
+                                        {% csrf_token %}
+                                        <button class="delete-button" type="submit"><i class="fas fa-trash-alt"></i> Supprimer</button>
+                                    </form>
+                                {% endblock save %}
+                            {% endwith %}
+                            <span class="score">
+                                {% with product.nutrition_grade_fr as nutrition_grade %}
+                                    <p style=" color: {{ nutriscores|get_color_for_key:nutrition_grade }}">{{ nutriscores|get_value_for_key:nutrition_grade }}</p>
+                                {% endwith %}
+                            </span>
+                        </figure>
+                    </div>
+                        </div>
+                    {% if not forloop.last %}
+                    <div class="row h-50 w-100">
+                    {% endif %}
+                    {% else %}
+                            <div class="col-md-4 text-center align-items-center justify-content-center d-flex">
+                                <figure class="products">
+                                    <a class="product" href={% url "catalog:aliment" product.id %}>
+                                        <img src="{{ product.image_url }}" class="product img-fluid">
+                                        <figcaption>{{ product.product_name_fr }}</figcaption>
+                                    </a>
+                                    {% with product as substitute %}
+                                        {% block save2 %}
+                                            <form action="{% url "catalog:delete_favorite" product.id %}" method="post">
+                                                {% csrf_token %}
+                                                <button class="delete-button" type="submit"><i class="fas fa-trash-alt"></i> Supprimer</button>
+                                            </form>
+                                        {% endblock save2 %}
+                                    {% endwith %}
+                                    <span class="score">
+                                        {% with product.nutrition_grade_fr as nutrition_grade %}
+                                            <p style="color: {{ nutriscores|get_color_for_key:nutrition_grade }}">{{ nutriscores|get_value_for_key:nutrition_grade }}</p>
+                                        {% endwith %}
+                                    </span>
+                                </figure>
+                            </div>
+                    {% endif %}
+                {% endfor %}
+                </div>
+        </div>
+    </main>
+{% endblock main %}
+
+{% block pagination %}
+<div class="pagination justify-content-center">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo;</a>
+            <a href="?page={{ page_obj.previous_page_number }}"><</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} sur {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock pagination %}

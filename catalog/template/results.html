@@ -1,0 +1,25 @@
+{% extends "favorites.html" %}
+
+{% load static %}
+
+{% block title %}Résultats{% endblock title %}
+
+{% block header %}
+    <div class="col-lg-10 align-self-end">
+        <h1 class="aliment-title text-uppercase font-weight-bold">{{ base_product.product_name_fr }}</h1>
+        <hr class="divider my-4" />
+    </div>
+{% endblock header %}
+
+{% block replace %}
+<h2 class="text-center">Vous pouvez remplacer cet aliment par: </h2>
+{% endblock replace %}
+
+{% block save2 %}
+    {% block save %}
+        <form class="save-form" action="{% url "catalog:save" base_product.id substitute.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit"><i class="far fa-save"></i> Sauvegarder</button>
+        </form>
+    {% endblock save %}
+{% endblock save2 %}

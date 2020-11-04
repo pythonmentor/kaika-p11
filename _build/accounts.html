@@ -1,0 +1,196 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accounts &#8212; Documentation OCR-Projet8 1.0</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Catalog" href="catalog.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+
+
+          <div class="body" role="main">
+
+  <div class="section" id="module-accounts.urls">
+<span id="accounts"></span><h1>Accounts<a class="headerlink" href="#module-accounts.urls" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Urls for account</p>
+<span class="target" id="module-accounts.views"></span><p>Views for accounts</p>
+<dl class="py function">
+<dt id="accounts.views.login_user">
+<code class="sig-prename descclassname">accounts.views.</code><code class="sig-name descname">login_user</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em>, <em class="sig-param"><span class="n">form</span><span class="p">:</span> <span class="n"><a class="reference internal" href="#accounts.forms.LoginForm" title="accounts.forms.LoginForm">accounts.forms.LoginForm</a></span></em><span class="sig-paren">)</span> &#x2192; django.http.response.HttpResponse<a class="headerlink" href="#accounts.views.login_user" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Verify login.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>request</strong> – django request</p></li>
+<li><p><strong>form</strong> (<a class="reference internal" href="#accounts.forms.LoginForm" title="accounts.forms.LoginForm"><em>LoginForm</em></a>) – form to retrieve login data</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="accounts.views.sign_out">
+<code class="sig-prename descclassname">accounts.views.</code><code class="sig-name descname">sign_out</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">request</span></em><span class="sig-paren">)</span> &#x2192; django.http.response.HttpResponse<a class="headerlink" href="#accounts.views.sign_out" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>View to log out.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>request</strong> – django request</p>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>HttpResponse</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-accounts.forms"></span><p>Forms for accounts</p>
+<dl class="py class">
+<dt id="accounts.forms.LoginForm">
+<em class="property">class </em><code class="sig-prename descclassname">accounts.forms.</code><code class="sig-name descname">LoginForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#accounts.forms.LoginForm" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Class to create form for user.</p>
+<p><strong>Form fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">login</span></code>: Login (<code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">password</span></code>: Password (<code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code>)</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py class">
+<dt id="accounts.forms.SubscribeForm">
+<em class="property">class </em><code class="sig-prename descclassname">accounts.forms.</code><code class="sig-name descname">SubscribeForm</code><span class="sig-paren">(</span><em class="sig-param">data=None</em>, <em class="sig-param">files=None</em>, <em class="sig-param">auto_id='id_%s'</em>, <em class="sig-param">prefix=None</em>, <em class="sig-param">initial=None</em>, <em class="sig-param">error_class=&lt;class 'django.forms.utils.ErrorList'&gt;</em>, <em class="sig-param">label_suffix=None</em>, <em class="sig-param">empty_permitted=False</em>, <em class="sig-param">field_order=None</em>, <em class="sig-param">use_required_attribute=None</em>, <em class="sig-param">renderer=None</em><span class="sig-paren">)</span><a class="headerlink" href="#accounts.forms.SubscribeForm" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Class to create form for creating user.</p>
+<p><strong>Form fields:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">login</span></code>: Login (<code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">last_name</span></code>: Nom (<code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">first_name</span></code>: Prénom (<code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">email</span></code>: E-mail (<code class="xref py py-class docutils literal notranslate"><span class="pre">EmailField</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">password</span></code>: Password (<code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">confirm_password</span></code>: Confirmer (<code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code>)</p></li>
+</ul>
+<dl class="py method">
+<dt id="accounts.forms.SubscribeForm.clean">
+<code class="sig-name descname">clean</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#accounts.forms.SubscribeForm.clean" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Get cleaned data</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">OCR-Projet8</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Requirements:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Accounts</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Accounts</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Catalog</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="catalog.html">Catalog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ocrProjet8.html">ocrProjet8</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Scrapping</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="scrapping.html">Scrapping</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Search</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="search.html">Search</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="Chapitre précédent">Installation</a></li>
+      <li>Next: <a href="catalog.html" title="Chapitre suivant">Catalog</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, BICHARI Mehdi.
+
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+
+      |
+      <a href="_sources/accounts.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+
+
+
+  </body>
+</html>

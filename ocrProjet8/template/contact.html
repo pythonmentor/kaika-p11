@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Contact{%  endblock title %}
+
+{% block header %}
+    <div class="col-lg-10 align-self-end">
+        <h1 class="text-uppercase text-white font-weight-bold">Contact</h1>
+        <hr class="divider my-4" />
+    </div>
+    <div class="col-lg-8 align-self-baseline">
+        <form id="contact-form" class="contact-form-class text-white {% if request.user_agent.is_mobile%}text-right{% endif %}" action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {{ form.media }}
+            <button id="contact-button">Envoyer</button>
+        </form>
+    </div>
+{% endblock header %}
