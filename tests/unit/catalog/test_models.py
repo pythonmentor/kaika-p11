@@ -1,8 +1,7 @@
 """Test on catalog's models"""
 import uuid
 
-from django.contrib.auth.models import User
-
+from accounts.models import CustomUser
 from catalog import populate
 from catalog.models import Category, Favorite, Product
 from scrapping import ID_PRODUCT, NUTELLA
@@ -54,7 +53,7 @@ class TestModels(TestPattern):
         product_1.save()
         product_2.save()
 
-        user = User(username="Utilisateur")
+        user = CustomUser(username="Utilisateur")
         user.save()
 
         populate.save_favorite(product_1, product_2, user)

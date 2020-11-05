@@ -126,7 +126,7 @@ def subscribe(request) -> HttpResponse:
                     f"veuillez utiliser le lien fourni afin de valider votre compte",
                 )
 
-                return redirect("home")
+                return redirect("accounts:login")
             except IntegrityError as error:
                 messages.add_message(
                     request, 40, f"Echec lors de la création du compte: {error}"

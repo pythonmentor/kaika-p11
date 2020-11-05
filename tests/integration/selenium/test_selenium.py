@@ -60,6 +60,7 @@ class SeleniumBasedTestCase(LiveServerTestCase):
         self.driver.find_element_by_id("pur-beurre").click()
 
         self.assertEqual(self.driver.title, "Pur beurre")
+
         # select search form
         self.driver.find_element_by_class_name("select2-selection").click()
 

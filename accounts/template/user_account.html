@@ -20,7 +20,7 @@
                 <label class="text-white" for="user_email">Votre e-mail:</label>
                 <input id="user_email" placeholder="mail" value={{ request.user.email }}>
                 <div>
-                    <a href="{% url 'reset_password' user=request.user.id %}" class="btn btn-1"></a>
+                    <a href="{% url "accounts:reset_password" user=request.user.id %}" class="btn btn-1"></a>
                     <button>Réinitialiser password</button>
                 </div>
 
